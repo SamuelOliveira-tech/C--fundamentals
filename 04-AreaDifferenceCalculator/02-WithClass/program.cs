@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using TriangleCalculatorWithClass;
 
@@ -28,8 +28,8 @@ namespace MyApp
             Console.Write("Side C(meters): ");
             y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            double areaX = area(x.A, x.B, x.C);
-            double areaY = area(y.A, y.B, y.C);
+            double areaX = x.Area();
+            double areaY = y.Area();
 
             Console.WriteLine("\nArea of the triangle x = " + areaX.ToString("F4", CultureInfo.InvariantCulture) + " meters");
             Console.WriteLine("Area of the triangle y = " + areaY.ToString("F4", CultureInfo.InvariantCulture) + " meters");
@@ -48,12 +48,5 @@ namespace MyApp
             }
         }
 
-        static double area(double lado1, double lado2, double lado3)
-        {
-
-            double p = (lado1 + lado2 + lado3) / 2.0;
-            return Math.Sqrt(p * (p - lado1) * (p - lado2) * (p - lado3));
-
-        }
     }
 }
